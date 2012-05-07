@@ -14,6 +14,7 @@
 <script src="lib/javascript/phonegap-1.1.0.js"></script>
 <script src="lib/javascript/zepto.js" type="text/javascript"></script>
 <script src="lib/javascript/underscore.js" type="text/javascript"></script>
+<script src=lib/javascript/backbone.localStorage-min" type="text/javascript"></script>
 <script src="lib/javascript/backbone.js" type="text/javascript"></script>
 <script src="app/javascript/maps.js" type="text/javascript"></script>
 <script src="app/javascript/app.js" type="text/javascript"></script>
@@ -140,23 +141,28 @@ body {
 <div id="header"><a href="http://cubiq.org/iscroll">Map</a></div>
 <div id="wrapper">
 	<div id="scroller" class='main_window'>
-
-		PUT THIS SHIT INTO A TEMPLATE AND LEAVE A PLACE TO HANG IT 
-		<div id='map_route_contain'>
-		<form class = 'well  form-inline'>
-			<input class = 'input-big search-query' placeholder = 'address?' id='where_box'>
-			<button class ='btn' id='wherebutton'>Find</button>
-		</form>
 		
-<div id='map_area'></div>
+		<div id='map_area'>
+			<div id='map_route_contain'>
+			<form class = 'well  form-inline'>
+				<input class = 'input-big search-query' placeholder = 'address?' id='where_box'>
+				<button class ='btn' id='wherebutton'>Find</button>
+			</form>
+			</div>
+			<div id='goog_map'></div>
+		</div>
+
+<div id='places_area'></div>
+
 </div>
-	</div>
-</div>
+
+<div id='places_area'></div>
+
 
 <div id="footer">
 	<a class="btn btn-small" id='settings' href="#"><i class="icon-cog"></i> Settings</a>
 	<a class="btn btn-small" id= 'map' href="#"><i class="icon-fire"></i> Map </a>
-	<a class="btn btn-small" id='stalk'  href="#"><i class="icon-eye-open"></i> Stalk</a>
+	<a class="btn btn-small" id='stalk'  href="#"><i class="icon-eye-open"></i> Joke</a>
 	<a class="btn btn-small" id='profile' href="#"><i class="icon-user"></i>Profile</a>
 </div>
 
