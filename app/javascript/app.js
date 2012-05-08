@@ -21,6 +21,9 @@
       var self;
       console.log('starting up the router');
       self = this;
+      this.bind('route', function(e) {
+        return console.log('fired!', e);
+      });
       $('#settings').on('click', function() {
         return self.settings();
       });
@@ -35,12 +38,17 @@
       });
     };
 
+    Router.prototype.prepare_route = function(name) {
+      $('.main_window').empty();
+      return $('.main_window').append($(name + '_template').html());
+    };
+
     Router.prototype.settings = function() {
-      console.log("settings!");
-      return this.goog_map.dispose();
+      return this.prepare_route('settings');
     };
 
     Router.prototype.maps = function() {
+      this.prepare_route('maps');
       return this.goog_map = new Map({
         el: $('#map_area')
       });
