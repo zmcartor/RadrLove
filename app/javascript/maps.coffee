@@ -17,20 +17,14 @@ window.Map = class Map extends Backbone.View
 
 	geo_error: (error) ->
 		alert error
-	#every class will have a 'dispose' function which will clean up screen and
-	#unbind handlers
-	dispose: ->
-		#unbind things if need be..
-		@$el.hide()
-		console.log 'cleaned up maps, goodbye!'
-
+	
 	render: ->
 		@$el.show()
 		myOptions =
 			zoom: 10,
 			center: @location,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
-		@map = new google.maps.Map(document.getElementById('map_area') , myOptions);
+		@map = new google.maps.Map(document.getElementById('goog_map') , myOptions);
 
 	#use this stuff later to geocode and center on an address. Pretty cool! :)
 	find_location: (eve) ->
