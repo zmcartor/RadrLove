@@ -24,7 +24,8 @@ class Router extends Backbone.Router
 	prepare_route: (name) ->
 		#based on the template name
 		$('.main_window').empty();
-		$('.main_window').append($(name+'_template').html())
+		$('.main_window').append($('#'+name+'_template').html())
+		console.log $('#'+name+'_template').html()
 
 	settings: ->
 		@prepare_route('settings')
@@ -34,9 +35,11 @@ class Router extends Backbone.Router
 		@goog_map = new Map(el: $('#map_area'))
 	
 	places: ->
+		@prepare_route('places')
 		console.log 'showing some places'
 
 	profile: ->
+		@prepare_route('profile')
 		console.log "profile!!"
 
 window.App = {}
