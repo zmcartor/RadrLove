@@ -27,11 +27,6 @@
       return alert(error);
     };
 
-    Map.prototype.dispose = function() {
-      this.$el.hide();
-      return console.log('cleaned up maps, goodbye!');
-    };
-
     Map.prototype.render = function() {
       var myOptions;
       this.$el.show();
@@ -40,7 +35,7 @@
         center: this.location,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
-      return this.map = new google.maps.Map(document.getElementById('map_area'), myOptions);
+      return this.map = new google.maps.Map(document.getElementById('goog_map'), myOptions);
     };
 
     Map.prototype.find_location = function(eve) {

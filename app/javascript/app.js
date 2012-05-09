@@ -40,7 +40,8 @@
 
     Router.prototype.prepare_route = function(name) {
       $('.main_window').empty();
-      return $('.main_window').append($(name + '_template').html());
+      $('.main_window').append($('#' + name + '_template').html());
+      return console.log($('#' + name + '_template').html());
     };
 
     Router.prototype.settings = function() {
@@ -55,10 +56,12 @@
     };
 
     Router.prototype.places = function() {
+      this.prepare_route('places');
       return console.log('showing some places');
     };
 
     Router.prototype.profile = function() {
+      this.prepare_route('profile');
       return console.log("profile!!");
     };
 
