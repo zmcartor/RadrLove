@@ -18,7 +18,6 @@
     };
 
     Map.prototype.geocode_success_callback = function(location) {
-      console.log(location);
       this.location = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
       return this.render();
     };

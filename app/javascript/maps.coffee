@@ -11,7 +11,6 @@ window.Map = class Map extends Backbone.View
 		#show like a little gif or something while location is determined.
 
 	geocode_success_callback: (location) ->
-		console.log location
 		@location = new google.maps.LatLng location.coords.latitude, location.coords.longitude
 		@render()
 

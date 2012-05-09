@@ -15,15 +15,21 @@
     };
 
     Profile.prototype.initialize = function() {
-      return _.bindAll(this);
+      _.bindAll(this);
+      this.render();
+      return 'blah';
     };
 
     Profile.prototype.render = function() {
+      console.log('AAAAAAAAAAAAAAA');
       this.template = _.template($('#profile_template').html());
-      return $(this.el).html(this.template(this.model.toJSON()));
+      return $(this.el).html(this.template({}));
     };
 
-    Profile.prototype.save_profile = function() {};
+    Profile.prototype.save_profile = function(eve) {
+      console.log('save save!!');
+      return eve.preventDefault();
+    };
 
     return Profile;
 

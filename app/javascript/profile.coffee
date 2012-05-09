@@ -1,17 +1,21 @@
 window.Profile_view = class Profile extends Backbone.View
 	
-	events:
-		'click button#save' : 'save_profile'
+	events:{'click button#save' : 'save_profile'}
 
 	initialize: ->
 		_.bindAll @
+		@render()
+		'blah'
 	
 	render: ->
+		console.log 'AAAAAAAAAAAAAAA'
 		@template = _.template($('#profile_template').html())
-		$(@el).html(@template(@model.toJSON()))
+		$(@el).html(@template({}))
 		
 		#go through collection of fields and set values from model to form
-	save_profile: ->
+	save_profile:(eve) ->
+		console.log 'save save!!'
+		eve.preventDefault()
 		#serialize form values to JSON
 		# @model.set( json)
 		# save to local storage @model.save()

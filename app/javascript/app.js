@@ -21,9 +21,6 @@
       var self;
       console.log('starting up the router');
       self = this;
-      this.bind('route', function(e) {
-        return console.log('fired!', e);
-      });
       $('#settings').on('click', function() {
         return self.settings();
       });
@@ -40,8 +37,7 @@
 
     Router.prototype.prepare_route = function(name) {
       $('.main_window').empty();
-      $('.main_window').append($('#' + name + '_template').html());
-      return console.log($('#' + name + '_template').html());
+      return $('.main_window').append($('#' + name + '_template').html());
     };
 
     Router.prototype.settings = function() {
@@ -61,8 +57,13 @@
     };
 
     Router.prototype.profile = function() {
-      this.prepare_route('profile');
-      return console.log("profile!!");
+      var my_profile, pv;
+      this.prepare_route('no_thanks');
+      my_profile = new Profile_model;
+      return pv = new Profile_view({
+        el: $('.main_window'),
+        model: my_profile
+      });
     };
 
     return Router;
